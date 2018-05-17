@@ -92,11 +92,11 @@ We tested our concurrency speed using 10,000 iterations. This was placed in a st
 
 Visual display with max, min, average time for each of the 10,000 iterations.
 
-![alt text](https://raw.githubusercontent.com/GerKarl/WatorProject/master/ConcurrentBenchmark.png)
+![alt text](https://raw.githubusercontent.com/GerKarl/WatorProject/master/ConcurrencyBenchmark.png)
 
 The exponential line(dotted orange) looks fairly flat and it is not obvious as to the speed up. We are dealing with milliseconds here so we made an additional graph to simply show the average:
 
-![alt text](https://raw.githubusercontent.com/GerKarl/WatorProject/master/ConcurrentAverage.png)
+![alt text](https://raw.githubusercontent.com/GerKarl/WatorProject/master/ConcurrencyAverage.png)
 
 It can be ascertained from the average graph that the running of openmp with one thread produces a similar result to the sequential implementation, while not exactly the same at 0.007282804 sequential vs 0.0079545, they are close enough. It could be said that perhaps the overhead of creating a thread with openmp caused this overhead.
 
