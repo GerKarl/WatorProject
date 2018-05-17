@@ -35,6 +35,8 @@ g++ compiler used with sfml libraries and flags.
 
 Documents produced utilizing Doxygen.
 
+#### Hardware
+
 ### How to run & dependencies
 
 This project requires that the sfml libraries are installed on the machine and that the sfml environment is setup.
