@@ -37,6 +37,11 @@ Documents produced utilizing Doxygen.
 
 #### Hardware
 
+MacBook Pro(Retina, 15-inch, Early 2013) (Ubuntu 14.04 booted from USB)
+Processor: 2.4 Ghz Intel Core i7
+Memory: 8GB 1600 MHz DDR3
+Quad Core
+
 ### How to run & dependencies
 
 This project requires that the sfml libraries are installed on the machine and that the sfml environment is setup.
