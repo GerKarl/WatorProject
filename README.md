@@ -84,3 +84,21 @@ The problem occurred when we increased the number of threads to any value above 
 
 Like I said, we spent about 8 hours trying to resolve this, alas, to no avail.
 
+### Aha!! We Found The Problem
+
+While giving it one last shot an error message pointed us to the problem and we were able to fix it. 
+
+We tested our concurrency speed using 10,000 iterations. This was placed in a strategic place to give us the most potential speed increase. Essentially we broke our threads up on one nested for loop, however this for loop calls every other method(almost). Here are our results:
+
+Visual display with max, min, average time for each of the 10,000 iterations.
+
+![alt text](https://raw.githubusercontent.com/GerKarl/WatorProject/master/ConcurrentBenchmark.png)
+
+The exponential line(dotted orange) looks fairly flat and it is not obvious as to the speed up. We are dealing with milliseconds here so we made an additional graph to simply show the average:
+
+![alt text](https://raw.githubusercontent.com/GerKarl/WatorProject/master/ConcurrentAverage.png)
+
+It can be ascertained from the average graph that the running of openmp with one thread produces a similar result to the sequential implementation, while not exactly the same at 0.007282804 sequential vs 0.0079545, they are close enough. It could be said that perhaps the overhead of creating a thread with openmp caused this overhead.
+
+There is a clear speed displayed on the average graph, whereby it would appear that 3 threads/6 threads seems to be the optimum. Could this be because of our implementation of a 3 dimensional array? Maybe. The overhead of creating more threads becomes apparent after the 6th thread, but it is interesting to note that this is a quad core implementation, or rather was implemented on a quad core machine. You would think that moving past the 4th thread would create more overhead, but even up to the 10th thread there is a definite increase in efficiency compared to the sequential implementation.... curious.
+
